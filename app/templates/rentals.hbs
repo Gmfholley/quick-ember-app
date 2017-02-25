@@ -5,6 +5,14 @@
 
 </div>
 
+<div class="listings">
+	{{#each model as |rentalUnit|}}
+		{{rental-listing rental=rentalUnit}}
+	{{/each}}
+
+</div>
+
+
 {{#link-to 'contact' class="button"}}
 	Contact
 {{/link-to}}
