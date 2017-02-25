@@ -5,12 +5,13 @@
 
 </div>
 
-<div class="listings">
-	{{#each model as |rentalUnit|}}
-		{{rental-listing rental=rentalUnit}}
+{{#list-filter filter=(action 'filterByCity') as |rentals| }}
+	<ul class="results listings">
+	{{#each rentals as |rentalUnit|}}
+		<li>{{rental-listing rental=rentalUnit}}</li>
 	{{/each}}
-
-</div>
+	</ul>
+{{/list-filter}}
 
 
 {{#link-to 'contact' class="button"}}

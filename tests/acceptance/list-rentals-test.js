@@ -49,13 +49,13 @@ test('should filter the list of rentals by city', function(assert) {
 
 	andThen(function(){
 		assert.equal(find('.listing').length, 1, 'should find one listing after filter');
-		assert.equal(find('.listing .location:contins("Seattle")').length, 1, 'should find that one listing contains word searched for');
+		assert.equal(find('.listing .location:contains("Seattle")').length, 1, 'should find that one listing contains word searched for');
 	})
 });
 
 test('should show details for a specific rental', function(assert) {
 	visit('/rentals');
-	click('a:contains("Grand Old Mansions")');
+	click('a:contains("Grand Old Mansion")');
 	andThen(function(){
 		assert.equal(currentURL(), '/rentals/grand-old-mansion', 'should navigate to grand old mansion page');
 		assert.equal(find('.show-listing h2').text(), "Grand Old Mansion", 'should show page with heading of rental listing');
