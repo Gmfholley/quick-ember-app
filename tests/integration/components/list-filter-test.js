@@ -7,8 +7,8 @@ moduleForComponent('list-filter', 'Integration | Component | list filter', {
   integration: true
 });
 
-const ITEMS = [{city: 'San Francisco'}, {city: 'Seattle'}, {city: 'Portland'}]
-const FILTERED_ITEMS = [{city: 'Seattle'}]
+const ITEMS = [{city: 'San Francisco'}, {city: 'Seattle'}, {city: 'Portland'}];
+const FILTERED_ITEMS = [{city: 'Seattle'}];
 
 test('should initially load all listings', function(assert){
   this.on('filterByCity', (val) => {
@@ -29,7 +29,7 @@ test('should initially load all listings', function(assert){
       {{/each}}
       </ul>
     {{/list-filter}}
-  `}});
+  `);
 
   return wait().then(() => {
     assert.equal(this.$('.city').length, 3);
@@ -58,7 +58,7 @@ test('should filter out Seattle', function(assert){
       {{/each}}
       </ul>
     {{/list-filter}}
-  `}});
+  `);
 
   this.$('.list-filter input').val('Sea').keyup();
 
@@ -68,4 +68,4 @@ test('should filter out Seattle', function(assert){
   });
 
 
-})
+});
